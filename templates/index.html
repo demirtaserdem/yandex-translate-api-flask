@@ -1,0 +1,67 @@
+<!--
+Yandex Translate Api
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yandex Translate Api Python Flask </title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class = "container">
+        <div class="row">
+            <div class = "col-md-6 mx-auto">
+                <div class ="card card-body mt-5">
+                    <h3 class="heading display-5  pb-3">Yandex Translate Api Python Flask</h3>
+                    <form action="/translate" method="post">
+                        
+                        <div class="form-group">
+                            <label class ="form-label">Kelimeyi Giriniz: </label>
+                            <input type="text" class="form-control" name = "input_word" autocomplete="off" placeholder="" autofocus required>
+                        </div>
+                        <hr>
+
+                        <div class="form-group">
+                            <p>Çeviri:</p>
+                            {% if info %}
+                                <input type="text" readonly class="form-control" name = "output_word" value="{{info.input_word}} --->>> {{info.output_word}}" autocomplete="off">
+                            {% else %}
+                                <input type="text" readonly class="form-control" name = "output_word" autocomplete="off">
+                            {% endif %}
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <input id ="submitbtn" type="submit" value = "Çevir" class = "btn btn-danger">
+                        </div>
+                    </form>
+                    
+                    <div class="form-group">
+                        <p>Son Arananlar: </p>
+                        {% if info %}
+                        <textarea class = "form-control" rows ="5" readonly>{{info.last_search}}</textarea>
+                        {% else %}
+                        <textarea class = "form-control" rows ="5" readonly></textarea>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-group">
+                        <a href="/last_search_clean" class ="btn btn-danger">Son Arananları Temizle</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+       <script type="text/javascript" src="../static/js/jquery-3.3.1.slim.min.js"></script>
+       <script type="text/javascript" src="../static/js/popper.min.js"></script>
+       <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+ 
+</body>
+</html>
