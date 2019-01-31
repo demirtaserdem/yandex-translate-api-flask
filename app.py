@@ -1,15 +1,17 @@
 from flask import Flask,render_template,request,redirect,url_for
 import requests
 import os
+import json
 
 app = Flask(__name__)
 
+open("dict.txt","w").close()
+open("last_searchs.txt","w").close()
 
-translateInfo = dict()
-
-@app.route("/",methods = ["GET","POST"])
+@app.route("/")
 def index():
-    return render_template("index.html",info=translateInfo)
+    translateInfo = read_dict()
+    return render_template("index.html",info = translateInfo)
 
 @app.route("/translate",methods = ["GET","POST"])
 def translate():
@@ -20,16 +22,33 @@ def translate():
             url = create_url(input_word)
             output_word = translateFunc(url)
             writeLastSearch(input_word,output_word)
+            translateInfo = dict()
             translateInfo["input_word"] = input_word
             translateInfo["output_word"] = output_word
             translateInfo["last_search"] = printLastSearch()
+            write_dict(translateInfo)           
     return redirect(url_for("index"))
 
 @app.route("/last_search_clean")
 def last_search_clean():
     clean_Last_Searched()
-    translateInfo.clear()
+    clean_dict()
     return redirect(url_for("index"))
+
+def clean_dict():
+    open("dict.txt","w").close()
+
+def read_dict():
+    if os.stat("dict.txt").st_size != 0:
+        with open("dict.txt","r",encoding ="utf-8") as file:
+           json_data =  file.read()
+        return json.loads(json_data)
+    else:
+        return None
+
+def write_dict(translateInfo):
+    with open("dict.txt","w",encoding = "utf-8") as file:
+        file.write(json.dumps(translateInfo))
 
 def create_url(input_word):
     #Yandex Apide Çeviri Url İsteğni oluşturmak için kısımlara ayrıldı.
@@ -100,8 +119,8 @@ def clean_Last_Searched():
     """last_searchs.txt dosyasının temizlenmesini ve oluşmasını
     sağlar
     """
-    open("last_searchs.txt","w",encoding = "utf-8").close()
+    open("last_searchs.txt","w").close()
     
 
-if __name__ == "__main__":
-    app.run(debug = True)
+#if __name__ == "__main__":
+#    app.run()
