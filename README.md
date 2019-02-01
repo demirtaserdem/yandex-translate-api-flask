@@ -1,21 +1,21 @@
 # Yandex Translate API - Python - Flask 
 
-Yandex Translate Api kullanılarak, internet bağlantısı aracılığıyla 
-Türkçe - İngilizce çeviri yapan bir flask uygulamasıdır. 
+Yandex Translate Api kullanılarak,  
+Türkçe - İngilizce çeviri yapan bir Flask uygulamasıdır. 
 
  - Html sayfası oluşturulurken Bootstrap v4.2.1 kullandım.
 
-- Python 3 ve Flask kullanılarak yazılmıştır.
+- Python 3 ve Flask Kullandım.
 
-Temel olarak Kullanıcının istediği kelimeyle Yandex Translate Api'ye
+Temel olarak Kullanıcının istediği kelimeyle, Yandex Translate Api'ye
 uygun url oluşturulmuş. Çevirisi "request" modülü kullanarak, 
 Yandex Translate Api'ye get request gönderilmiştir.
-Dönen bilgi json verisi verisi olarak işlenmiş flaskla birlikle jinja
+Dönen bilgi json verisi verisi olarak işlenmiş Flaskla birlikle jinja
 kullanılarak, html sayfası render edilmiştir.
 
-Database kullanılmamıştır. Son arananlar json verisi şeklinde 
-dict.txt olarak kaydedilmiş ana fonksiyon içinde oradan okuma yapılarak 
-html sayfası içerisine gönderilmiştir. 
+Database kullanılmamıştır. Son arananlar; json verisi şeklinde 
+dict.txt olarak kaydedilmiş, ana fonksiyon içinde dict.txt'den okuma 
+yapılarak html sayfası içerisine gönderilmiştir. 
 
 Programın bir bölümünde kullanılan: 
 - "os" modülü; oluşacak son aramalardosyasının boyutuna göre boş olup 
@@ -58,10 +58,10 @@ python wsgi.py
 - <a href="https://app1.erdemdemirtas.net" target="_blank">Çalışan Uygulama İçin Tıklayın</a>
 
 Uygulamayı [1]'deki dökümantasyona uyarak
-aşağıdaki adreste yayınladım.
-Amazon Route 53
-Yayın ortamı
-Amazon Ec2 - Amazon Route 53 - Ubuntu 18.04 - nginx - 
+yyukarıdaki adreste yayınladım.
+
+###Yayın ortamı:
+Amazon Ec2 - Amazon Route 53 - Amazon Route 53 - Ubuntu 18.04 - nginx - 
 gunicorn - letsencrypt kullanılarak hazırlanmıştır.
 
 ##Kaynak
