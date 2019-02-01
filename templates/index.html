@@ -1,6 +1,14 @@
-<!--
-Yandex Translate Api
+<!--Yandex Translate Api Python Flask
+Erdem Demirtaş
+demirtaserdem@gmail.com
+https://github.com/demirtaserdem/yandex-translate-api-python-flask
+https://app1.erdemdemirtas.net
 -->
+<!-- Bootstrap v4.2.1
+ve Jinja Template Kullanularak Hazırlanmıştır. 
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,25 +17,31 @@ Yandex Translate Api
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Yandex Translate Api Python Flask </title>
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- icon dosyası eklenmiştir -->
     <link rel="icon" href="../static/icon/icon1.ico">
-
 </head>
-<body>
 
-    <div class = "container">
-        <div class="row">
-            <div class = "col-md-6 mx-auto">
-                <div class ="card card-body mt-5">
-                    <h3 class="heading display-5  pb-3">Yandex Translate Api Python Flask</h3>
-                    <form action="/translate" method="post">
-                        
-                        <div class="form-group">
-                            <label class ="form-label">Türkçe Kelimeyi Giriniz: </label>
+<body>
+    <!-- İçerik Container içerisine konulmuştur -->
+    <div class = "container" id = "container-1" >
+        <!-- Izgaralara Ayırmak için row kolonu kullanulmıştır -->
+        <div class="row" id = "row-1">
+            <!-- Kolon Seçilmiştir -->
+            <div class = "col-md-6 mx-auto" id ="colon-1">
+                <!-- Card oluşturulmuştur -->
+                <div class ="card card-body mt-5" id = "card-1">
+                    <!-- Başlık -->
+                    <h3 class="heading display-5  pb-3" id = "title-1">Yandex Translate Api Python Flask</h3>
+                    <!-- Form Alanı -->
+                    <form action="/translate" method="post" id = "form-1">
+                        <div class="form-group" id = "fg-1">
+                            <label class ="form-label" id = "fl-1">Türkçe Kelimeyi Giriniz: </label>
+                            <!-- Kelime Giriş Alanı -->
                             <input type="text" class="form-control" name = "input_word" autocomplete="off" placeholder="" autofocus required>
                         </div>
                         <hr>
-
-                        <div class="form-group">
+                        <!-- Sonuç Bölümü Jinja Kullanılmıştır -->
+                        <div class="form-group" id = "fg-2">
                             <p>İngilizce Çeviri:</p>
                             {% if info %}
                                 <input type="text" readonly class="form-control" name = "output_word" value="{{info.input_word}} --->>> {{info.output_word}}" autocomplete="off">
@@ -35,14 +49,13 @@ Yandex Translate Api
                                 <input type="text" readonly class="form-control" name = "output_word" autocomplete="off">
                             {% endif %}
                         </div>
-
-                        
-                        <div class="form-group">
+                        <!-- Çevir Butonu Bölümü -->
+                        <div class="form-group" id = "fg-3">
                             <input id ="submitbtn" type="submit" value = "Çevir" class = "btn btn-danger">
                         </div>
                     </form>
-                    
-                    <div class="form-group">
+                    <!-- Son Arananlar Bölümü Jinja kullanılmıştır  -->
+                    <div class="form-group" id = "fg-4">
                         <p>Son Arananlar: </p>
                         {% if info %}
                         <textarea class = "form-control" rows ="5" readonly>{{info.last_search}}</textarea>
@@ -50,25 +63,25 @@ Yandex Translate Api
                         <textarea class = "form-control" rows ="5" readonly></textarea>
                         {% endif %}
                     </div>
-                    
-                    <div class="form-group">
-                        <a href="/last_search_clean" class ="btn btn-danger">Son Arananları Temizle</a>
+                    <!-- Son Arananları Temizle butonu -->
+                    <div class="form-group" id = "fg-5">
+                        <a href="/last_search_clean" class ="btn btn-danger" id = "btn_clear">Son Arananları Temizle</a>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-        <hr>
-        <footer class="text-center small">
-                <p><a href="http://www.erdemdemirtas.com.tr" target="_blank">@demirtaserdem</a> - 
-                <a href="https://github.com/demirtaserdem/yandex-translate-api-flask" target="_blank">Project Page Github</a></p>
-        </footer>
-        <hr>
+    <!-- footer Tüm Sayfayı kaplaması için container sışına yerleştirilmiştir  -->
+<hr>
+<footer class="text-center small">
+        <p><a href="http://www.erdemdemirtas.com.tr" target="_blank">@demirtaserdem</a> - 
+        <a href="https://github.com/demirtaserdem/yandex-translate-api-flask" target="_blank">Project Page Github</a></p>
+</footer>
+<hr>
 
-       <script type="text/javascript" src="../static/js/jquery-3.3.1.slim.min.js"></script>
-       <script type="text/javascript" src="../static/js/popper.min.js"></script>
-       <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="../static/js/popper.min.js"></script>
+<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
  
 </body>
 </html>
