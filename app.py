@@ -63,9 +63,9 @@ def translate():
     return redirect(url_for("index"))
 
 @app.route("/last_search_clean")
+def last_search_clean():
     """Son Arananları Temizleme Foksiyonu
     """
-def last_search_clean():
     clean_Last_Searched()
     clean_dict()
     return redirect(url_for("index"))
@@ -133,7 +133,7 @@ def translateFunc(url):
 
 def writeLastSearch(input_word,output_word):
     """Çevrilen ve çeviri kelimeyi str olarak alır,
-    last_searchs.txt dosyasına yazar konsola yazabiliyorsa yazar, 
+    last_searchs.txt dosyasına yazar konsola yazabiliyorsa yazar 
     """
     try:
         with open("last_searchs.txt","r+",encoding = "utf-8") as file:
@@ -145,7 +145,7 @@ def writeLastSearch(input_word,output_word):
 
 def printLastSearch():
     """Son Arananların listesini
-    last_searchs.txt den alır. yazdırır
+    last_searchs.txt den alır. döner
     """
     #last_searchs.txt olmamısın durumu için hata denetimi.
     try:
@@ -164,6 +164,7 @@ def clean_Last_Searched():
     """
     open("last_searchs.txt","w").close()
     
-
+"""Bu Kısmı wsgi.py dosyasında kullandık.
+"""
 #if __name__ == "__main__":
 #    app.run()
