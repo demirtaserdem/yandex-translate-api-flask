@@ -55,7 +55,7 @@ python wsgi.py
 ```
 
 ## Test İçin 
-- <a href="https://app1.erdemdemirtas.net" target="_blank">Çalışan Uygulama İçin Tıklayın</a>
+<a href="https://app1.erdemdemirtas.net" target="_blank">Çalışan Uygulama İçin Tıklayın</a>
 
 Uygulamayı [1]'deki dökümantasyona uyarak
 yyukarıdaki adreste yayınladım.
