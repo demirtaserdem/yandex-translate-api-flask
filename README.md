@@ -60,10 +60,11 @@ python wsgi.py
 Uygulamayı [1]'deki dökümantasyona uyarak
 yyukarıdaki adreste yayınladım.
 
-###Yayın ortamı:
+### Yayın ortamı:
 Amazon Ec2 - Amazon Route 53 - Amazon Route 53 - Ubuntu 18.04 - nginx - 
 gunicorn - letsencrypt kullanılarak hazırlanmıştır.
 
-##Kaynak
-[1]: https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
-[2]: https://tech.yandex.com/translate/
+## Kaynak
+[1] : https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
+
+[2] : https://tech.yandex.com/translate/
