@@ -1,5 +1,10 @@
 # Yandex Translate API - Python - Flask 
 
+### Yandex Translate Free Api artık hizmet vermediğinden uygulamanın çalışan sayfası yoktur.
+https://yandex.com/dev/translate/doc/dg/concepts/about.html
+
+---
+
 Yandex Translate Api kullanılarak,  
 Türkçe - İngilizce çeviri yapan bir Flask uygulamasıdır. 
 
@@ -55,10 +60,15 @@ python wsgi.py
 ```
 
 ## Test İçin 
-<a href="https://app1.erdemdemirtas.net" target="_blank">Çalışan Uygulama İçin Tıklayın</a>
+<a href="https://app1.erdemdemirtas.com.tr" target="_blank">Çalışan Uygulama İçin Tıklayın</a>
 
 Uygulamayı [1]'deki dökümantasyona uyarak
-yyukarıdaki adreste yayınladım.
+yukarıdaki adreste yayınladım.
+
+### Yandex Translate Free Api artık hizmet vermediğinden uygulamanın çalışan sayfası yoktur.
+https://yandex.com/dev/translate/doc/dg/concepts/about.html
+
+---
 
 ### Yayın ortamı:
 Amazon Ec2 - Amazon Route 53 - Amazon Route 53 - Ubuntu 18.04 - nginx - 
