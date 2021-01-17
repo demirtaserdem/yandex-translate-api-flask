@@ -2,7 +2,7 @@
 Erdem Demirtaş
 demirtaserdem@gmail.com
 https://github.com/demirtaserdem/yandex-translate-api-python-flask
-https://app1.erdemdemirtas.net
+https://app1.erdemdemirtas.com.tr
 2019.01
 """
 """Bootstrap v4.2.1
